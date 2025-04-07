@@ -1,0 +1,37 @@
+const mongoose = require("mongoose");
+
+const adsSchema = new mongoose.Schema({
+    Adstart: { type: Boolean },
+    GBanner: { type: String },
+    GInter: { type: String },
+    GNative: { type: String },
+    GOpanApp: { type: String },
+    GReward: { type: String },
+    FBanner: { type: String },
+    FInter: { type: String },
+    FNative: { type: String },
+    FReward: { type: String },
+    AdPlatform: { type: String },
+    InterTime: { type: Number },
+    OtherLink: { type: String },
+    UpdateApp: { type: Number },
+    UnderWork: { type: Boolean },
+    AdxBanner: { type: String },
+    AdxInter: { type: String },
+    AdxNative: { type: String },
+    AdxOpanApp: { type: String },
+    AdxReward: { type: String },
+    FNativeBanner: { type: String },
+    NativePosition: { type: Number },
+    PostLimit: { type: Number },
+    // iRank: { type: Number },
+    isDeleted: { type: Boolean, default: false },
+    vCreatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "Created By" },
+    vUpdatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "Updated By" },
+    dtCreatedAt: Number,
+    isUpdated: Boolean,
+    dtUpdatedAt: Number,
+    dtDeletedAt: Number,
+});
+
+module.exports = mongoose.model("tblAds", adsSchema);
